@@ -1,6 +1,6 @@
 type Props = {};
 
-const AdminPage = (props: Props) => {
+const AdminPage: React.FC = (props: Props): JSX.Element => {
   return <div>AdminPage</div>;
 };
 

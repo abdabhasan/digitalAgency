@@ -11,3 +11,10 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.active-link {
+  color: #0369a1 !important;
+  background-color: white !important;
+
+  transition: all ease 0.3s;
+}

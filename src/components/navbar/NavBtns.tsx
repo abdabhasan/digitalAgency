@@ -4,15 +4,15 @@ type Props = {};
 
 const session = true;
 
-const NavBtns = (props: Props) => {
+const NavBtns: React.FC = (props: Props): JSX.Element => {
   return (
     <>
       {session ? (
-        <Link href="/" className="btn">
+        <Link href="/" className="btn text-sky-500 bg-white">
           Logout
         </Link>
       ) : (
-        <Link href="/login" className="btn">
+        <Link href="/login" className="btn text-sky-500 bg-white">
           Login
         </Link>
       )}

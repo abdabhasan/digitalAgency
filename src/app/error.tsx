@@ -2,7 +2,7 @@
 
 type Props = {};
 
-const error = (props: Props) => {
+const error: React.FC = (props: Props): JSX.Element => {
   return <div>error</div>;
 };
 

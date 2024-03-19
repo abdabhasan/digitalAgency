@@ -1,6 +1,6 @@
 type Props = {};
 
-const NotFound = (props: Props) => {
+const NotFound: React.FC = (props: Props): JSX.Element => {
   return <div>NotFound</div>;
 };
 

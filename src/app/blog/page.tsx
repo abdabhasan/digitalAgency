@@ -1,6 +1,6 @@
 type Props = {};
 
-const BlogPage = (props: Props) => {
+const BlogPage: React.FC = (props: Props): JSX.Element => {
   return <div>BlogPage</div>;
 };
 

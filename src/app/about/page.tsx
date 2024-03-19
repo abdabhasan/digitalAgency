@@ -4,7 +4,7 @@ import Link from "next/link";
 
 type Props = {};
 
-const AboutPage = (props: Props) => {
+const AboutPage: React.FC = (props: Props): JSX.Element => {
   return (
     <>
       <div className="hero min-h-screen">
@@ -14,7 +14,7 @@ const AboutPage = (props: Props) => {
             alt="hero"
             width={800}
             height={800}
-            className="w-[28rem] sm:w-[34rem] rounded-lg shadow-2xl"
+            className="w-[28rem] sm:w-[34rem] rounded-lg"
           />
           <div>
             <h4 className="text-2xl font-bold mb-10 text-sky-400 ">

@@ -1,6 +1,6 @@
 type Props = {};
 
-const LoginPage = (props: Props) => {
+const LoginPage: React.FC = (props: Props): JSX.Element => {
   return <div>LoginPage</div>;
 };
 

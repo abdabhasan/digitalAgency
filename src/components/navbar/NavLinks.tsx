@@ -1,11 +1,12 @@
+"use client";
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
 type Props = {};
 
 const links = [
   {
     id: "1",
-    title: "Homepage",
+    title: "Home",
     path: "/",
   },
   {
@@ -27,12 +28,19 @@ const links = [
 
 const isAdmin = true;
 
-const NavLinks = (props: Props) => {
+const NavLinks: React.FC = (props: Props): JSX.Element => {
+  const pathName = usePathname();
+
   return (
     <>
       {links.map((link) => (
         <li key={link.id}>
-          <Link href={link.path}>{link.title}</Link>
+          <Link
+            href={link.path}
+            className={`${pathName === link.path && "active-link"}`}
+          >
+            {link.title}
+          </Link>
         </li>
       ))}
       {isAdmin && (

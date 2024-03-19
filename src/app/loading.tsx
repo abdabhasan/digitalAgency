@@ -1,6 +1,6 @@
 type Props = {};
 
-const loading = (props: Props) => {
+const loading: React.FC = (props: Props): JSX.Element => {
   return <div>loading</div>;
 };
 

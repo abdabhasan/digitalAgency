@@ -1,6 +1,6 @@
 type Props = {};
 
-const Statstics = (props: Props) => {
+const Statstics: React.FC = (props: Props): JSX.Element => {
   return (
     <div className="stats">
       <div className="stat place-items-center">

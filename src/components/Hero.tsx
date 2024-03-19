@@ -3,7 +3,7 @@ import Link from "next/link";
 
 type Props = {};
 
-const Hero = (props: Props) => {
+const Hero: React.FC = (props: Props): JSX.Element => {
   return (
     <div className="hero min-h-screen">
       <div className="hero-content flex-col gap-20 lg:flex-row-reverse">
@@ -12,7 +12,7 @@ const Hero = (props: Props) => {
           alt="hero"
           width={1000}
           height={800}
-          className="w-[28rem] sm:w-[38rem] rounded-lg shadow-2xl"
+          className="w-[28rem] sm:w-[38rem] rounded-lg"
         />
         <div>
           <h1 className="text-7xl font-bold">
