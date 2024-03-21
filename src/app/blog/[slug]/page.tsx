@@ -1,28 +1,18 @@
 import BackToBlogBtn from "@/components/Btns/BackToBlogBtn";
 import ReadMoreBtn from "@/components/Btns/ReadMoreBtn";
 import PostAuthor from "@/components/PostAuthor";
+import { getPost } from "@/lib/data";
 import Image from "next/image";
 
 type Props = {
-  postTitle: string;
-  postDescription: string;
-  postCatigory: string;
-  postImg: string;
+  params: object;
 };
 
-const SinglePostPage: React.FC<Props> = ({
-  postTitle,
-  postDescription,
-  postCatigory,
-  postImg,
-}: Props): JSX.Element => {
-  {
-    postTitle = "TEST";
-    postDescription =
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Iureveritatis sint autem nesciunt, laudantium quia tempore delect";
-    postCatigory = "category";
-    postImg = "/contact.svg";
-  }
+const SinglePostPage: React.FC<Props> = async ({ params }: Props) => {
+  const { slug } = params;
+
+  const post = await getPost(slug);
+  const { img, title, description } = post;
 
   return (
     <main className="flex flex-col justify-center items-center min-h-screen">
@@ -34,23 +24,23 @@ const SinglePostPage: React.FC<Props> = ({
             <Image
               width={300}
               height={300}
-              className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
-              src={postImg}
-              alt={postTitle}
+              className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96 "
+              src={img}
+              alt={title}
             />
 
             <div className="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
-              <p className="text-sm text-sky-300 uppercase">{postCatigory}</p>
+              <p className="text-sm text-sky-300 uppercase">catigory</p>
 
               <h1 className="block mt-4 text-2xl font-semibold text-gray-800   dark:text-white md:text-3xl">
-                {postTitle}
+                {title}
               </h1>
 
               <p className="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
-                {postDescription}
+                {description}
               </p>
 
-              <ReadMoreBtn postLink="#" />
+              <ReadMoreBtn slug="#" />
               <PostAuthor
                 authorName="Anderson"
                 authorJob="dev"
