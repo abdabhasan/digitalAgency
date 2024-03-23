@@ -1,16 +1,18 @@
+import { handleLogout } from "@/lib/actions";
+import { auth } from "@/lib/auth";
 import Link from "next/link";
 
 type Props = {};
 
-const session = true;
-
-const NavBtns: React.FC = (props: Props): JSX.Element => {
+const NavBtns: React.FC = async (props: Props) => {
+  const session = await auth();
+  console.log(session);
   return (
     <>
-      {session ? (
-        <Link href="/" className="btn text-sky-500 bg-white">
-          Logout
-        </Link>
+      {session?.user ? (
+        <form action={handleLogout}>
+          <button className="btn text-sky-500 bg-white">Logout</button>
+        </form>
       ) : (
         <Link href="/login" className="btn text-sky-500 bg-white">
           Login
