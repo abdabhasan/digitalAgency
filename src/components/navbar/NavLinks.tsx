@@ -1,7 +1,11 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-type Props = {};
+
+type Props = {
+  isAdmin: boolean;
+};
 
 const links = [
   {
@@ -26,9 +30,7 @@ const links = [
   },
 ];
 
-const isAdmin = true;
-
-const NavLinks: React.FC = (props: Props): JSX.Element => {
+const NavLinks: React.FC<Props> = ({ isAdmin }: Props) => {
   const pathName = usePathname();
 
   return (
