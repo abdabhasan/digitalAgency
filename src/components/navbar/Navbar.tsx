@@ -1,10 +1,17 @@
 import Logo from "../Logo";
 import NavBtns from "./NavBtns";
 import NavLinks from "./NavLinks";
+import { auth } from "@/lib/auth";
 
 type Props = {};
 
-const Navbar: React.FC = (props: Props): JSX.Element => {
+const Navbar: React.FC = async (props: Props) => {
+  const session = await auth();
+  console.log(session);
+
+  // const isAdmin = session?.user?.isAdmin;
+  const isAdmin = true;
+
   return (
     <nav>
       <div className="navbar bg-neutral px-5">
@@ -37,7 +44,7 @@ const Navbar: React.FC = (props: Props): JSX.Element => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <NavLinks />
+            <NavLinks isAdmin={true} />
           </ul>
         </div>
         <div className="navbar-end">

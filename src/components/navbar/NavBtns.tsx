@@ -6,7 +6,6 @@ type Props = {};
 
 const NavBtns: React.FC = async (props: Props) => {
   const session = await auth();
-  console.log(session);
   return (
     <>
       {session?.user ? (
