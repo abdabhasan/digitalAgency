@@ -1,6 +1,6 @@
 "use client";
 import SubmitBtn from "@/components/Btns/SubmitBtn";
-import LoginInput from "@/components/LoginInput";
+import LoginInput from "@/components/Inputs/LoginInput";
 import { login } from "@/lib/actions";
 import { useFormState } from "react-dom";
 
