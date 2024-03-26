@@ -19,7 +19,7 @@ const RegisterFormContainer: React.FC<Props> = ({ submitBtnText }: Props) => {
   }, [state?.success, router]);
 
   return (
-    <form action={formAction} className="space-y-4">
+    <form action={formAction} className="space-y-6">
       <LoginInput name="username" type="text" />
       <LoginInput name="email" type="email" />
       <LoginInput name="password" type="password" />

@@ -10,7 +10,7 @@ const PostAuthor: React.FC<Props> = ({
   authorImg,
   authorJob,
   authorName,
-}: Props): JSX.Element => {
+}: Props) => {
   return (
     <div className="flex items-center mt-6">
       <Image
@@ -22,10 +22,8 @@ const PostAuthor: React.FC<Props> = ({
       />
 
       <div className="mx-4">
-        <h1 className="text-sm text-gray-700 dark:text-gray-200">
-          {authorName}
-        </h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400">{authorJob}</p>
+        <h1 className="text-sm text-gray-800 ">{authorName}</h1>
+        <p className="text-sm text-sky-300  ">{authorJob}</p>
       </div>
     </div>
   );

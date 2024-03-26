@@ -11,10 +11,12 @@ const NavBtns: React.FC = async (props: Props) => {
     <>
       {session?.user ? (
         <form action={handleLogout}>
-          <button className="btn text-sky-500 bg-white">Logout</button>
+          <button className="btn text-sky-500 bg-white border-none">
+            Logout
+          </button>
         </form>
       ) : (
-        <Link href="/login" className="btn text-sky-500 bg-white">
+        <Link href="/login" className="btn text-sky-500 bg-white border-none">
           Login
         </Link>
       )}

@@ -13,7 +13,7 @@ const LoginPage: React.FC = (props: Props): JSX.Element => {
   return (
     <div className="flex h-screen absolute top-0 left-0 w-full p-0">
       <ImgContainer />
-      <div className="w-full bg-base-200 lg:w-1/2 flex items-center justify-center">
+      <div className="w-full bg-sky-50 lg:w-1/2 flex items-center justify-center">
         <div className="max-w-md w-full p-6">
           <TitleContainer
             title="login"
@@ -24,10 +24,10 @@ const LoginPage: React.FC = (props: Props): JSX.Element => {
             isRegisterForm={false}
           />
           <LoginFormContainer submitBtnText="login" />
-          <div className="mt-4 text-sm text-white text-center">
+          <div className="mt-4 text-sm text-gray-800 text-center">
             <p>
               Do not have an account?{" "}
-              <Link href="/register" className="text-sky-500 hover:underline">
+              <Link href="/register" className="text-sky-400 hover:underline">
                 Register here
               </Link>
             </p>

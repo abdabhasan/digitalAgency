@@ -37,7 +37,9 @@ const NavLinks: React.FC = (props: Props): JSX.Element => {
         <li key={link.id}>
           <Link
             href={link.path}
-            className={`${pathName === link.path && "active-link"}`}
+            className={`${
+              pathName === link.path && "active-link"
+            } hover:bg-sky-50 hover:text-sky-500`}
           >
             {link.title}
           </Link>
@@ -45,7 +47,14 @@ const NavLinks: React.FC = (props: Props): JSX.Element => {
       ))}
       {isAdmin && (
         <li>
-          <Link href="/admin">Admin</Link>
+          <Link
+            href="/admin"
+            className={`${
+              pathName === "/admin" && "active-link"
+            } hover:bg-sky-50 hover:text-sky-500`}
+          >
+            Admin
+          </Link>
         </li>
       )}
     </>

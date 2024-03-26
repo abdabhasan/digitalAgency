@@ -15,25 +15,35 @@ const Hero: React.FC = (props: Props): JSX.Element => {
           className="w-[28rem] sm:w-[38rem] rounded-lg"
         />
         <div>
-          <h1 className="text-7xl font-bold">
-            Creative
+          <h1 className="text-6xl text-black font-bold">
+            Journey
             <br />
-            Thoughts
+            Through
             <br />
-            Agency
+            The Isles
+            <br />
+            Of Wonder
           </h1>
-          <p className="py-6">
-            Discover the essence of innovation at Creative Thoughts Agency.
-            Here, creativity intersects with expertise to craft captivating
-            solutions that elevate your brand and engage your audience. Let's
-            transform your visions into impactful realities together.
+          <p className="py-6  text-gray-800  ">
+            Dive into "IslandExhibit" and discover a world where every island
+            tells a story. From the untouched beauty of secluded beaches to the
+            vibrant life of exotic jungles, IslandExhibit brings you closer to
+            the planet’s most mesmerizing islands. Explore the mysteries,
+            embrace the cultures, and find your next adventure with us as we
+            showcase the wonders that await in these paradise isles.
           </p>
           <div className="btns flex gap-3">
-            <Link href="/about" className="btn bg-sky-500 text-white">
+            <Link
+              href="/about"
+              className="btn bg-sky-500 text-white border-none"
+            >
               Learn More
             </Link>
-            <Link href="/contact" className="btn bg-white text-sky-500">
-              Contact
+            <Link
+              href="/blog"
+              className="btn bg-white text-sky-500 border-sky-500 "
+            >
+              Browse
             </Link>
           </div>
         </div>
