@@ -1,6 +1,6 @@
 "use client";
 import SubmitBtn from "@/components/Btns/SubmitBtn";
-import LoginInput from "@/components/LoginInput";
+import LoginInput from "@/components/Inputs/LoginInput";
 import { register } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";

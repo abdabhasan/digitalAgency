@@ -1,39 +1,17 @@
-import { Suspense } from "react";
-import {
-  AdminPostForm,
-  AdminPosts,
-  AdminUserForm,
-  AdminUsers,
-} from "@/components/Containers/AdminPageContainers";
-
-import { auth } from "@/lib/auth";
+import Link from "next/link";
 
 type Props = {};
 
 const AdminPage: React.FC = async (props: Props) => {
-  const session = await auth();
-
   return (
-    <div className="mt-12 flex flex-col gap-24">
-      <div className="flex gap-24 flex-col md:flex-row">
-        <div className="flex-1">
-          <Suspense fallback={<div>Loading...</div>}>
-            <AdminPosts />
-          </Suspense>
-        </div>
-        <div className="flex-1">
-          <AdminPostForm userId={session?.user?.id} />
-        </div>
-      </div>
-      <div className="flex gap-24 flex-col md:flex-row">
-        <div className="flex-1">
-          <Suspense fallback={<div>Loading...</div>}>
-            <AdminUsers />
-          </Suspense>
-        </div>
-        <div className="flex-1">
-          <AdminUserForm />
-        </div>
+    <div className="mt-12 flex flex-col justify-center items-center h-screen">
+      <div className="  md:w-1/4">
+        <Link
+          href="/admin/posts"
+          className="btn w-full bg-white text-sky-500 border border-sky-500"
+        >
+          Posts Cotrol Panel
+        </Link>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import ContactInput from "@/components/ContactInput";
+import ContactInput from "@/components/Inputs/ContactInput";
 import Image from "next/image";
 
 type Props = {};
