@@ -1,5 +1,7 @@
 "use client";
 
+import AdminFormBtn from "@/components/Btns/AdminFormBtn";
+import AdminInput from "@/components/Inputs/AdminInput";
 import { addUser } from "@/lib/actions";
 import { useFormState } from "react-dom";
 
@@ -9,43 +11,25 @@ const AdminUserForm: React.FC = (props: Props) => {
   const [state, formAction] = useFormState(addUser, undefined);
 
   return (
-    <form action={formAction} className="flex flex-col gap-5">
-      <h1>Add New User</h1>
-      <input
-        type="text"
-        name="username"
-        placeholder="username"
-        className="p-5 bg-gray-200 border-none rounded-md text-gray-700"
-      />
-      <input
-        type="text"
-        name="email"
-        placeholder="email"
-        className="p-5 bg-gray-200 border-none rounded-md text-gray-700"
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="password"
-        className="p-5 bg-gray-200 border-none rounded-md text-gray-700"
-      />
-      <input
-        type="text"
-        name="img"
-        placeholder="img"
-        className="p-5 bg-gray-200 border-none rounded-md text-gray-700"
-      />
-      <select
-        name="isAdmin"
-        className="p-5 bg-gray-200 border-none rounded-md text-gray-700"
-      >
-        <option value="false">Is Admin?</option>
-        <option value="false">No</option>
-        <option value="true">Yes</option>
-      </select>
-      <button className="p-5 cursor-pointer bg-blue-500 border-none rounded-md text-gray-700 font-bold">
-        Add
-      </button>
+    <form action={formAction} className="flex flex-col items-center space-y-4">
+      <h1 className="text-sky-500 text-xl  m-0">Add New User</h1>
+      <div className="w-2/3 md:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <AdminInput type="text" name="username" placeholder="username" />
+        <AdminInput type="email" name="email" placeholder="email" />
+        <AdminInput type="password" name="password" placeholder="password" />
+        <AdminInput type="text" name="img" placeholder="img" />
+      </div>
+      <div className="w-2/3 md:w-1/2">
+        <select
+          name="isAdmin"
+          className="p-4 mb-5 w-full bg-white text-sky-500   border border-sky-500 rounded-md placeholder:capitalize"
+        >
+          <option value="false">Is Admin?</option>
+          <option value="false">No</option>
+          <option value="true">Yes</option>
+        </select>
+        <AdminFormBtn />
+      </div>
       {state?.error}
     </form>
   );
