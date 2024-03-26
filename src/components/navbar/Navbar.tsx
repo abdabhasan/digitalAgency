@@ -14,7 +14,7 @@ const Navbar: React.FC = async (props: Props) => {
 
   return (
     <nav>
-      <div className="navbar bg-neutral px-5">
+      <div className="navbar bg-sky-500 px-5">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

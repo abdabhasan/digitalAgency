@@ -11,7 +11,7 @@ const ContactInput: React.FC<Props> = ({
     <input
       type={type}
       placeholder={placeholder}
-      className="w-full rounded-md py-3 px-4 bg-base-300 text-sm outline-none"
+      className="w-full rounded-md py-3 px-4 bg-white text-sky-500 placeholder:text-sky-500 border border-sky-500 text-sm outline-none"
     />
   );
 };

@@ -2,8 +2,6 @@
 import SubmitBtn from "@/components/Btns/SubmitBtn";
 import LoginInput from "@/components/LoginInput";
 import { login } from "@/lib/actions";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import { useFormState } from "react-dom";
 
 type Props = {
@@ -11,14 +9,9 @@ type Props = {
 };
 const LoginFormContainer: React.FC<Props> = ({ submitBtnText }: Props) => {
   const [state, formAction] = useFormState(login, undefined);
-  const router = useRouter();
-
-  useEffect(() => {
-    state?.success && router.push("/");
-  }, [state?.success, router]);
 
   return (
-    <form action={formAction} className="space-y-4">
+    <form action={formAction} className="space-y-6">
       <LoginInput name="username" type="text" />
 
       <LoginInput name="password" type="password" />

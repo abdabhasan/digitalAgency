@@ -1,7 +1,6 @@
 import BackToBlogBtn from "@/components/Btns/BackToBlogBtn";
 import ReadMoreBtn from "@/components/Btns/ReadMoreBtn";
 import PostAuthor from "@/components/PostAuthor";
-import { getPost } from "@/lib/data";
 import axios from "axios";
 import Image from "next/image";
 
@@ -24,7 +23,7 @@ const getData = async (slug: string) => {
 const SinglePostPage: React.FC<Props> = async ({ params }: Props) => {
   const { slug } = params;
 
-  const post = await getPost(slug);
+  const post = await getData(slug);
   const { img, title, description } = post;
 
   return (
@@ -33,7 +32,7 @@ const SinglePostPage: React.FC<Props> = async ({ params }: Props) => {
         <div className="container  px-6 py-10 mx-auto">
           <BackToBlogBtn />
 
-          <div className="mt-8 lg:-mx-6 lg:flex lg:items-center">
+          <div className="mt-8 lg:-mx-6 lg:flex ">
             <Image
               width={300}
               height={300}
@@ -42,18 +41,19 @@ const SinglePostPage: React.FC<Props> = async ({ params }: Props) => {
               alt={title}
             />
 
-            <div className="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
-              <p className="text-sm text-sky-300 uppercase">catigory</p>
+            <div className="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 flex flex-col justify-between">
+              <p className="text-sm text-sky-400 uppercase">catigory</p>
 
-              <h1 className="block mt-4 text-2xl font-semibold text-gray-800   dark:text-white md:text-3xl">
-                {title}
-              </h1>
+              <div>
+                <h1 className="block mt-4 text-2xl font-semibold text-sky-400  md:text-3xl">
+                  {title}
+                </h1>
 
-              <p className="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
-                {description}
-              </p>
+                <p className="mt-6 text-sm text-gray-800   md:text-sm">
+                  {description}
+                </p>
+              </div>
 
-              <ReadMoreBtn slug="#" />
               <PostAuthor
                 authorName="Anderson"
                 authorJob="dev"

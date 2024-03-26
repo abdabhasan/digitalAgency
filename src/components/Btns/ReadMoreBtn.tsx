@@ -4,11 +4,11 @@ type Props = {
   slug: string;
 };
 
-const ReadMoreBtn: React.FC<Props> = ({ slug }: Props): JSX.Element => {
+const ReadMoreBtn: React.FC<Props> = ({ slug }: Props) => {
   return (
     <Link
       href={`blog/${slug}`}
-      className="inline-flex items-center py-2 text-sm font-medium text-center text-white underline hover:text-blue-400"
+      className="inline-flex items-center py-2 text-sm font-medium text-center text-sky-400 underline hover:text-blue-500"
     >
       Read more
       <svg
