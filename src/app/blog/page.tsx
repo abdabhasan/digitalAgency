@@ -16,7 +16,6 @@ const BLOG_ENDPOINT = `${process.env.API_ENDPOINT}/blog`;
 const getData = async () => {
   try {
     const res = await axios.get(BLOG_ENDPOINT);
-    console.log(res.data);
     return res.data;
   } catch (error) {
     console.log(error);
