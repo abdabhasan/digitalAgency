@@ -21,10 +21,10 @@ export const addPost = async (
   prevState,
   formData: FormData | undefined
 ): Promise<string | object> => {
-  const { title, desc, slug, userId } = Object.fromEntries(formData) as {
+  const { title, description, img, userId } = Object.fromEntries(formData) as {
     title: string;
-    desc: string;
-    slug: string;
+    description: string;
+    img: string;
     userId: string;
   };
 
@@ -32,8 +32,8 @@ export const addPost = async (
     connectToDatabase();
     const newPost = new Post({
       title,
-      desc,
-      slug,
+      description,
+      img,
       userId,
     });
 
