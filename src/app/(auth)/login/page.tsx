@@ -4,7 +4,6 @@ import {
   SocailAuthBtnsContainer,
   LoginFormContainer,
 } from "@/components/Containers/LoginPageContainers";
-
 import Link from "next/link";
 
 type Props = {};
