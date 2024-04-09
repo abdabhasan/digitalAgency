@@ -1,8 +1,16 @@
 import Image from "next/image";
-import { deletePost } from "@/lib/actions";
 import axios from "axios";
+import DeletePostBtn from "@/components/Btns/DeletePostBtn";
 
 type Props = {};
+
+type Post = {
+  _id: string;
+  img: string;
+  title: string;
+  description: string;
+  slug: string;
+};
 
 const BLOG_ENDPOINT = `${process.env.API_ENDPOINT}/blog`;
 
@@ -17,15 +25,15 @@ const getData = async () => {
 };
 
 const AdminPosts: React.FC = async (props: Props) => {
-  const posts = await getData();
+  const posts: Post[] = await getData();
 
   return (
     <div className="w-3/4 md:w-1/2 mx-auto my-16 flex flex-col">
       <h1 className="text-sky-500 text-2xl text-center">Posts</h1>
-      {posts?.map((post) => (
+      {posts?.map((post: Post) => (
         <div
           className="my-3 flex items-center justify-between gap-4 border border-gray-300 bg-white rounded-lg p-3"
-          key={post.id}
+          key={post._id}
         >
           <div className="flex items-center gap-5">
             <Image
@@ -37,12 +45,7 @@ const AdminPosts: React.FC = async (props: Props) => {
             />
             <span className="text-gray-800">{post.title}</span>
           </div>
-          <form action={deletePost}>
-            <input type="hidden" name="id" value={post.id} />
-            <button className="px-2.5 py-1 bg-red-500  hover:bg-red-500/60 text-white rounded-md border-none cursor-pointer transition-all duration-200">
-              Delete
-            </button>
-          </form>
+          <DeletePostBtn postId={post._id} />
         </div>
       ))}
     </div>
