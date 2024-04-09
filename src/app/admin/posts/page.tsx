@@ -3,8 +3,8 @@ import {
   AdminPosts,
 } from "@/components/Containers/AdminPageContainers";
 import { Suspense } from "react";
-import { auth } from "@/lib/auth";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import { auth } from "@/app/api/auth/[...nextauth]/route";
 
 type Props = {};
 
@@ -16,7 +16,7 @@ const page = async (props: Props) => {
       <h1 className="text-3xl pt-8 font-bold text-sky-500 text-center">
         Posts Control Panel
       </h1>
-      <AdminPostForm userId={session?.user?.id} />
+      <AdminPostForm userId={session?.user?.email} />
       <Suspense fallback={<LoadingSpinner />}>
         <AdminPosts />
       </Suspense>

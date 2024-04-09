@@ -35,7 +35,7 @@ const AdminUsers: React.FC = async (props: Props) => {
               height={50}
               className="rounded-md"
             />
-            <span className="text-gray-800">{user.username}</span>
+            <span className="text-gray-800">{user.email}</span>
           </div>
           <form action={deleteUser}>
             <input type="hidden" name="id" value={user.id} />

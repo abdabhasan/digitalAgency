@@ -18,13 +18,11 @@ const postSchema = new mongoose.Schema(
       trim: true,
     },
     userId: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String,
       required: true,
-      ref: "User", // Reference to the User model
     },
     slug: {
       type: String,
-      required: true,
       unique: true,
       trim: true,
       index: true, // Ensure indexing for performance

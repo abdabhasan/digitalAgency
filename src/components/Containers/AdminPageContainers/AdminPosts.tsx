@@ -29,7 +29,7 @@ const AdminPosts: React.FC = async (props: Props) => {
         >
           <div className="flex items-center gap-5">
             <Image
-              src={post.img || "/noAvatar.png"}
+              src={post.img}
               alt=""
               width={50}
               height={50}
