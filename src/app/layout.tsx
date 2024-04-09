@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/Footer";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-sky-50`}>
         <Navbar />
         <div className="flex-grow bg-sky-50 container mx-auto px-4 md:px-6 lg:px-8">
+          <ToastContainer />
           {children}
         </div>
         <Footer />

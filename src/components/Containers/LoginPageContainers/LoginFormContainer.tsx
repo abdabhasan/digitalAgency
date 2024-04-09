@@ -1,24 +1,40 @@
 "use client";
 import SubmitBtn from "@/components/Btns/SubmitBtn";
 import LoginInput from "@/components/Inputs/LoginInput";
-import { login } from "@/lib/actions";
-import { useFormState } from "react-dom";
+import { signIn } from "next-auth/react";
+import { toast } from "react-toastify";
 
 type Props = {
   submitBtnText: string;
 };
+
 const LoginFormContainer: React.FC<Props> = ({ submitBtnText }: Props) => {
-  const [state, formAction] = useFormState(login, undefined);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    const result = await signIn("credentials", {
+      redirect: false,
+      email,
+      password,
+    });
+
+    if (result.ok) {
+      window.location.href = "/";
+    } else {
+      toast.error("something went wrong!");
+    }
+  };
 
   return (
-    <form action={formAction} className="space-y-6">
-      <LoginInput name="username" type="text" />
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <LoginInput name="email" type="email" />
 
       <LoginInput name="password" type="password" />
       <div>
         <SubmitBtn text={submitBtnText} />
       </div>
-      <p>{state?.error}</p>
     </form>
   );
 };

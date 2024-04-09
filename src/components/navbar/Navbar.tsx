@@ -1,15 +1,11 @@
 import Logo from "../Logo";
 import NavBtns from "./NavBtns";
 import NavLinks from "./NavLinks";
-import { auth } from "@/lib/auth";
 
 type Props = {};
 
-const Navbar: React.FC = async (props: Props) => {
-  const session = await auth();
-  console.log(session);
-
-  // const isAdmin = session?.user?.isAdmin;
+const Navbar: React.FC = (props: Props) => {
+  // const isAdmin =onClick={handleLogout} session?.user?.isAdmin;
   const isAdmin = true;
 
   return (
