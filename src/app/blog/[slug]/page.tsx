@@ -1,8 +1,9 @@
 import BackToBlogBtn from "@/components/Btns/BackToBlogBtn";
-import ReadMoreBtn from "@/components/Btns/ReadMoreBtn";
 import PostAuthor from "@/components/PostAuthor";
 import axios from "axios";
 import Image from "next/image";
+
+const authorImg = "/avatar.svg";
 
 type Props = {
   params: object;
@@ -57,7 +58,7 @@ const SinglePostPage: React.FC<Props> = async ({ params }: Props) => {
               <PostAuthor
                 authorName="Anderson"
                 authorJob="dev"
-                authorImg="/contact.svg"
+                authorImg={authorImg}
               />
             </div>
           </div>
