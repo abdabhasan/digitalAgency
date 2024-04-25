@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { hashPassword } from "@/helpers/passwordHelper";
+import { hashPassword } from "@/helpers/hashPassword";
 import { connectToDatabase } from "@/lib/dbConfig";
 import { parseRequestBody } from "@/helpers/parsingHelpers";
 import {
