@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 import Credentials from "next-auth/providers/credentials";
-import { isPasswordsMatch, hashPassword } from "@/helpers/passwordHelper";
+import { isPasswordsMatch, hashPassword } from "@/helpers/hashPassword";
 import { connectToDatabase } from "@/lib/dbConfig";
 import { User } from "@/lib/models/User";
 import { redirect } from "next/navigation";
