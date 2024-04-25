@@ -6,6 +6,11 @@ export const parseRequestBody = async (req) => {
   }
   const body = Buffer.concat(chunks).toString();
 
+  // if the body is empty and return an empty object
+  if (!body.trim()) {
+    return {};
+  }
+
   const jsonData = JSON.parse(body);
 
   return jsonData;
